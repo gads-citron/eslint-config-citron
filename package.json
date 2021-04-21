@@ -1,0 +1,16 @@
+{
+  "name": "eslint-config-citron",
+  "version": "1.0.0",
+  "description": "Citron's definition of beauty",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "eslint",
+    "config",
+    "citron"
+  ],
+  "author": "Thomas Gerbouin",
+  "license": "ISC"
+}
