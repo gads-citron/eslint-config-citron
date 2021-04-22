@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-citron",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Citron's definition of beauty",
   "repository": {
     "type": "git",
