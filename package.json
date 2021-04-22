@@ -13,13 +13,20 @@
   ],
   "author": "Thomas Gerbouin",
   "license": "ISC",
-  "devDependencies": {
+  "peerDependencies": {
+    "typescript": ">= 3",
+    "eslint": ">= 6"
+  },
+  "dependencies": {
     "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.2.0"
+  },
+  "devDependencies": {
     "@typescript-eslint/parser": "^4.22.0",
     "eslint": "^7.24.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.2.0",
     "eslint-import-resolver-typescript": "^2.4.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "typescript": "^4.2.4"
   }
 }
