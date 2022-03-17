@@ -70,5 +70,11 @@ module.exports = {
     ],
 
     '@typescript-eslint/no-explicit-any': ['error'],
+
+    /** Misc */
+
+    // Fix no shadow error on enum, see https://github.com/typescript-eslint/typescript-eslint/issues/2483
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
   },
 };
