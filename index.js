@@ -40,6 +40,7 @@ module.exports = {
     'max-nested-callbacks': ['error', 3],
     'max-params': ['error', 3],
     complexity: ['error', 10],
+    'no-await-in-loop': 'off',
 
     /* Import */
 
