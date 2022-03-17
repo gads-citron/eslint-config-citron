@@ -36,13 +36,13 @@ These rules are not cast in stone, question them, discuss them around you, this 
   ```js
   {
     "env": {
-  		"es2021": true,
+      "es2021": true,
 
-  		// If front (javascript)
-  		"browser": true,
+      // If front (javascript)
+      "browser": true,
 
-  		// If back (nodejs)
-  		"node": true
+      // If back (nodejs)
+      "node": true
     },
 
     "extends": ["eslint-config-citron"]
