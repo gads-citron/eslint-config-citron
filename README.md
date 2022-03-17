@@ -33,7 +33,7 @@ These rules are not cast in stone, question them, discuss them around you, this 
   ```
 - Then create your `.eslintrc.json` and extend with `eslint-config-citron`
 
-  ```json
+  ```js
   {
     "env": {
   		"es2021": true,
@@ -44,11 +44,12 @@ These rules are not cast in stone, question them, discuss them around you, this 
   		// If back (nodejs)
   		"node": true
     },
-    **"extends": ["eslint-config-citron"]**
-  }
 
-  // For more information on eslint config see https://eslint.org/docs/user-guide/configuring/
+    "extends": ["eslint-config-citron"]
+  }
   ```
+
+  _For more information on eslint config see https://eslint.org/docs/user-guide/configuring/_
 
 - [Add EsLint to your IDE](https://eslint.org/docs/user-guide/integrations)
 
