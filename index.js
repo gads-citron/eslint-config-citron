@@ -41,6 +41,10 @@ module.exports = {
     'max-params': ['error', 3],
     complexity: ['error', 10],
     'no-await-in-loop': 'off',
+    'no-use-before-define': [
+      'error',
+      { functions: false, classes: true, variables: true },
+    ],
 
     /* Import */
 
@@ -71,5 +75,11 @@ module.exports = {
     ],
 
     '@typescript-eslint/no-explicit-any': ['error'],
+
+    /** Misc */
+
+    // Fix no shadow error on enum, see https://github.com/typescript-eslint/typescript-eslint/issues/2483
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
   },
 };
