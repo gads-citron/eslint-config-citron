@@ -208,8 +208,8 @@ _Keep the code readable_
 
 ### [complexity](https://eslint.org/docs/rules/complexity)
 
-Maximum cyclomatic complexity set to **10**. \***\*[Cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) is the number of decisions or path an algorithm can make.
-\*\*\***Reducing code complexity\*
+Maximum cyclomatic complexity set to **10**. [Cyclomatic complexity](https://en.wikipedia.org/wiki/Cyclomatic_complexity) is the number of decisions or path an algorithm can make.  
+Reducing code complexity.
 
 - Example
 
@@ -308,11 +308,17 @@ _Using the any type defeats the purpose of using TypeScript._
 
 ### Disabled rules
 
-- [**no-underscore-dangle**](https://eslint.org/docs/rules/no-underscore-dangle)
-- [\*\*no-restricted-syntax](https://eslint.org/docs/rules/no-restricted-syntax)\*\*
+- **[no-underscore-dangle](https://eslint.org/docs/rules/no-underscore-dangle)**
+- **[no-restricted-syntax](https://eslint.org/docs/rules/no-restricted-syntax)**
   This rule only apply on `LabeledStatement` and `WithStatement`
-- [\*\*@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md)\*\*
+- **[@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md)**
   This rule only apply on `checksConditionals`
+
+- **[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)** - Only for functions  
+  For more clarity, allow use of function before definition.  
+
+  In a file, where a function or a class is export who use others functions define in this file but not exported, those unexported functions can be define after the exported one for more clarity so when the file is open, the main exported function/class is shown in first.
+
 
 # Ressources
 
