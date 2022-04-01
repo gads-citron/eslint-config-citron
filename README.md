@@ -313,6 +313,9 @@ _Using the any type defeats the purpose of using TypeScript._
   This rule only apply on `LabeledStatement` and `WithStatement`
 - **[@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md)**
   This rule only apply on `checksConditionals`
+  
+- [no-await-in-loop](https://eslint.org/docs/rules/no-await-in-loop)  
+  Can be dangerous, force to use `Promise.All` on too large arrays.
 
 - **[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)** - Only for functions  
   For more clarity, allow use of function before definition.  
