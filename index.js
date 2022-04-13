@@ -59,6 +59,23 @@ module.exports = {
     // Prefer named export
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+
+    // Order import with line separation between groups
+    'import/order': [
+      'error',
+      {
+        // Add module import (@Module) after external import
+        pathGroups: [
+          {
+            pattern: '@*',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        'newlines-between': 'always',
+      },
+    ],
+
     // Allow underscore dangle
     'no-underscore-dangle': 'off',
     // Rewrite this airbnb rule to allow for and for or loops
