@@ -314,13 +314,16 @@ _Using the any type defeats the purpose of using TypeScript._
 - **[@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md)**
   This rule only apply on `checksConditionals`
   
-- [no-await-in-loop](https://eslint.org/docs/rules/no-await-in-loop)  
+- **[no-await-in-loop](https://eslint.org/docs/rules/no-await-in-loop)**  
   Can be dangerous, force to use `Promise.All` on too large arrays.
 
 - **[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)** - Only for functions  
   For more clarity, allow use of function before definition.  
 
   In a file, where a function or a class is export who use others functions define in this file but not exported, those unexported functions can be define after the exported one for more clarity so when the file is open, the main exported function/class is shown in first.
+
+- **[no-useless-constructor](https://eslint.org/docs/latest/rules/no-useless-constructor)**  
+  Allows dependency injections into classes with empty constructors.
 
 
 # Ressources

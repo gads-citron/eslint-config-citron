@@ -45,6 +45,8 @@ module.exports = {
       'error',
       { functions: false, classes: true, variables: true },
     ],
+    // Allows dependency injections into classes with empty constructors.
+    'no-useless-constructor': 'off',
 
     /* Import */
 
