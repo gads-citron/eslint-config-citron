@@ -27,11 +27,11 @@ These rules are not cast in stone, question them, discuss them around you, this 
 
 ### Setup EsLint
 
-- First install eslint and eslint-config-citron
+- First install eslint and @gads-citron/eslint-config-citron
   ```bash
-  npm i -D eslint eslint-config-citron
+  npm i -D eslint @gads-citron/eslint-config-citron
   ```
-- Then create your `.eslintrc.json` and extend with `eslint-config-citron`
+- Then create your `.eslintrc.json` and extend with `@gads-citron/eslint-config-citron`
 
   ```js
   {
@@ -45,7 +45,7 @@ These rules are not cast in stone, question them, discuss them around you, this 
       "node": true
     },
 
-    "extends": ["eslint-config-citron"]
+    "extends": ["@gads-citron/eslint-config-citron"]
   }
   ```
 
