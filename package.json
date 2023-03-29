@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-citron",
+  "name": "@gads-citron/eslint-config-citron",
   "version": "1.1.0",
   "description": "Citron's definition of beauty",
   "repository": {
