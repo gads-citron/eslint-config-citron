@@ -2,6 +2,15 @@
 
 Citron definition of beauty.
 
+##  Registry change
+
+This package has changed registry (from npm to github) so the name of the npm package has been changed.
+Be careful to put `@gads-citron/eslint-config-citron` in your package.json **and your eslintrc**.
+
+To install this package a `.npmrc` at the root of your project or user with the github registry and your access token is needed, more information [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package).
+
+Versions prior to 1.1.0 are not available on the github registry.
+
 ## Philosophy
 
 You will suffer, you will hate, but at the end you will pray the norm.
@@ -27,11 +36,11 @@ These rules are not cast in stone, question them, discuss them around you, this 
 
 ### Setup EsLint
 
-- First install eslint and eslint-config-citron
+- First install eslint and @gads-citron/eslint-config-citron
   ```bash
-  npm i -D eslint eslint-config-citron
+  npm i -D eslint @gads-citron/eslint-config-citron
   ```
-- Then create your `.eslintrc.json` and extend with `eslint-config-citron`
+- Then create your `.eslintrc.json` and extend with `@gads-citron/eslint-config-citron`
 
   ```js
   {
@@ -45,7 +54,7 @@ These rules are not cast in stone, question them, discuss them around you, this 
       "node": true
     },
 
-    "extends": ["eslint-config-citron"]
+    "extends": ["@gads-citron/eslint-config-citron"]
   }
   ```
 
