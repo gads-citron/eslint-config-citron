@@ -23,7 +23,7 @@ module.exports = {
     'max-lines': [
       'error',
       {
-        max: 150,
+        max: 200,
         skipBlankLines: true,
         skipComments: true,
       },
@@ -31,20 +31,16 @@ module.exports = {
     'max-lines-per-function': [
       'error',
       {
-        max: 25,
+        max: 35,
         skipBlankLines: true,
         skipComments: true,
       },
     ],
     'max-depth': ['error', 4],
     'max-nested-callbacks': ['error', 3],
-    'max-params': ['error', 3],
+    'max-params': ['error', 5],
     complexity: ['error', 10],
     'no-await-in-loop': 'off',
-    'no-use-before-define': [
-      'error',
-      { functions: false, classes: true, variables: true },
-    ],
     // Allows dependency injections into classes with empty constructors.
     'no-useless-constructor': 'off',
 
@@ -83,5 +79,30 @@ module.exports = {
     // Fix no shadow error on enum, see https://github.com/typescript-eslint/typescript-eslint/issues/2483
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'error',
+    'class-methods-use-this': 'off',
   },
+  overrides: [
+    {
+      files: ['**/*.test.ts', '**/*.spec.ts'],
+      rules: {
+        '@typescript-eslint/ban-ts-comment': 'off',
+        'max-lines-per-function': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/require-await': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        'max-nested-callbacks': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/unbound-method': 'off',
+        'no-use-before-define': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
+        'max-lines': 'off',
+        'no-empty': 'off',
+        'no-throw-literal': 'off',
+      },
+    },
+  ],
 };
