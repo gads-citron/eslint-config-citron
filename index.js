@@ -19,6 +19,8 @@ module.exports = {
     },
   },
   rules: {
+    "prettier/prettier": "error",
+
     /* Javascript */
     'max-lines': [
       'error',
@@ -96,7 +98,6 @@ module.exports = {
         'max-nested-callbacks': 'off',
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/unbound-method': 'off',
         'no-use-before-define': 'off',
         '@typescript-eslint/no-floating-promises': 'off',
         'max-lines': 'off',
