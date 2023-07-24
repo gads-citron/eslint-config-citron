@@ -19,7 +19,7 @@ module.exports = {
     },
   },
   rules: {
-    "prettier/prettier": "error",
+    'prettier/prettier': 'error',
 
     /* Javascript */
     'max-lines': [
@@ -45,6 +45,7 @@ module.exports = {
     'no-await-in-loop': 'off',
     // Allows dependency injections into classes with empty constructors.
     'no-useless-constructor': 'off',
+    'no-use-before-define': 'off',
 
     /* Import */
 
