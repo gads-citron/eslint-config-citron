@@ -84,6 +84,8 @@ module.exports = {
     '@typescript-eslint/no-shadow': 'error',
     '@typescript-eslint/explicit-function-return-type': 'error',
     'class-methods-use-this': 'off',
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': 'error',
   },
   overrides: [
     {
