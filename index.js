@@ -1,4 +1,10 @@
 module.exports = {
+  ignorePatterns: ['.eslintrc.js'],
+  env: {
+    node: true,
+    jest: true,
+  },
+  root: true,
   extends: [
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
@@ -12,7 +18,7 @@ module.exports = {
     sourceType: 'module',
     project: 'tsconfig.json',
   },
-  plugins: ['@typescript-eslint', 'import'],
+  plugins: ['@typescript-eslint/eslint-plugin', 'import', 'prettier'],
   settings: {
     'import/resolver': {
       typescript: {},
