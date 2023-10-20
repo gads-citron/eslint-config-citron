@@ -58,7 +58,7 @@ module.exports = {
     // Specify the file extension when importing only if not .ts
     'import/extensions': [
       'error',
-      'always',
+      'ignorePackages',
       {
         ts: 'never',
       },
