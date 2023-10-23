@@ -1,10 +1,13 @@
 {
   "name": "@gads-citron/eslint-config-citron",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "Citron's definition of beauty",
   "repository": {
     "type": "git",
     "url": "https://github.com/gads-citron/eslint-config-citron.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "main": "index.js",
   "scripts": {
