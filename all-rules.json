@@ -1253,12 +1253,13 @@
       }
     ],
     "no-restricted-imports": [
-      "off",
-      {
-        "paths": [],
-        "patterns": []
-      }
-    ],
+      "error", {
+        "paths": [
+          "moment", 
+          "moment-timezone"
+          ]
+        }
+  ],
     "no-this-before-super": [
       "error"
     ],
