@@ -66,6 +66,13 @@ module.exports = {
     // Prefer named export
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+    // Restrict import of some libraries
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: ['moment', 'moment-timezone'],
+      },
+    ],
     // Allow underscore dangle
     'no-underscore-dangle': 'off',
     // Rewrite this airbnb rule to allow for and for or loops
