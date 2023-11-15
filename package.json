@@ -1,6 +1,6 @@
 {
   "name": "@gads-citron/eslint-config-citron",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Citron's definition of beauty",
   "repository": {
     "type": "git",
