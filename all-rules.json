@@ -1259,7 +1259,7 @@
           "moment-timezone"
           ]
         }
-  ],
+    ],
     "no-this-before-super": [
       "error"
     ],
