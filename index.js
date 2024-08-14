@@ -99,6 +99,38 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'error',
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        selector: 'memberLike',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+        filter: {
+          regex: '^_id$',
+          match: false,
+        },
+      },
+      {
+        selector: 'memberLike',
+        modifiers: ['protected'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require',
+        filter: {
+          regex: '^_id$',
+          match: false,
+        },
+      },
+      {
+        selector: 'memberLike',
+        format: ['camelCase'],
+        leadingUnderscore: 'forbid',
+        filter: {
+          regex: '^_id$',
+          match: false,
+        },
+      },
+    ],
   },
   overrides: [
     {
