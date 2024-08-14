@@ -2,7 +2,17 @@
 
 Citron definition of beauty.
 
-##  Registry change
+## Debugging
+
+If you want to list all the rules that are enabled in your eslint configuration, you can run the following command 🧑‍💻:
+
+```bash
+npx eslint --print-config file.js
+```
+
+If you want to test your configuration, here a playground 🛝 that can help you [typescript-eslint.io](https://typescript-eslint.io/play/#ts=5.5.2&fileType=.ts)
+
+## Registry change
 
 This package has changed registry (from npm to github) so the name of the npm package has been changed.
 Be careful to put `@gads-citron/eslint-config-citron` in your package.json **and your eslintrc**.
@@ -10,76 +20,6 @@ Be careful to put `@gads-citron/eslint-config-citron` in your package.json **and
 To install this package a `.npmrc` at the root of your project or user with the github registry and your access token is needed, more information [here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#installing-a-package).
 
 Versions prior to 1.1.0 are not available on the github registry.
-
-## Philosophy
-
-You will suffer, you will hate, but at the end you will pray the norm.
-
-_`Patere legem quam ipse fecisti`_
-
-### **Why impose a standard?**
-
-A programming standard is a game changer for long term project with multiple developers for two main reasons :
-
-1. It format and standardise the code so that anyone can read and understand easily and rapidly.
-2. It guide you in writing short and simple code.
-
-### **How apply a standard?**
-
-The most important thing, no matter what your preferred javascript style is, is to be consistent when working with a team or a large codebase that will have to be maintained in the future.
-
-Understand each rules and not try to _hack_ them. Theses conventions are set to push you to write cleaner code.
-
-These rules are not cast in stone, question them, discuss them around you, this is the best way to understand and improve this standard.
-
-## Getting started
-
-### Setup EsLint
-
-- First install eslint and @gads-citron/eslint-config-citron
-  ```bash
-  npm i -D eslint @gads-citron/eslint-config-citron
-  ```
-- Then create your `.eslintrc.json` and extend with `@gads-citron/eslint-config-citron`
-
-  ```js
-  {
-    "env": {
-      "es2021": true,
-
-      // If front (javascript)
-      "browser": true,
-
-      // If back (nodejs)
-      "node": true
-    },
-
-    "extends": ["@gads-citron/eslint-config-citron"]
-  }
-  ```
-
-  _For more information on eslint config see https://eslint.org/docs/user-guide/configuring/_
-
-- [Add EsLint to your IDE](https://eslint.org/docs/user-guide/integrations)
-
-### Setup Prettier
-
-- First install prettier dependency
-  ```bash
-  npm i -D --save-exact prettier
-  ```
-- Then create your `.prettierrc.json` with this configuration :
-  ```json
-  {
-    "trailingComma": "all",
-    "tabWidth": 2,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "printWidth": 80
-  }
-  ```
-- [Add prettier to your IDE](https://prettier.io/docs/en/editors.html)
 
 ## Code styling rules
 
@@ -322,18 +262,16 @@ _Using the any type defeats the purpose of using TypeScript._
   This rule only apply on `LabeledStatement` and `WithStatement`
 - **[@typescript-eslint/no-misused-promises](https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-misused-promises.md)**
   This rule only apply on `checksConditionals`
-  
 - **[no-await-in-loop](https://eslint.org/docs/rules/no-await-in-loop)**  
   Can be dangerous, force to use `Promise.All` on too large arrays.
 
 - **[no-use-before-define](https://eslint.org/docs/rules/no-use-before-define)** - Only for functions  
-  For more clarity, allow use of function before definition.  
+  For more clarity, allow use of function before definition.
 
   In a file, where a function or a class is export who use others functions define in this file but not exported, those unexported functions can be define after the exported one for more clarity so when the file is open, the main exported function/class is shown in first.
 
 - **[no-useless-constructor](https://eslint.org/docs/latest/rules/no-useless-constructor)**  
   Allows dependency injections into classes with empty constructors.
-
 
 # Ressources
 
