@@ -147,7 +147,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'no-use-before-define': 'off',
-        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/no-floating-promises': 'on',
         'max-lines': 'off',
         'no-empty': 'off',
         'no-throw-literal': 'off',

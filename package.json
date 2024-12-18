@@ -1,6 +1,6 @@
 {
   "name": "@gads-citron/eslint-config-citron",
-  "version": "4.0.1",
+  "version": "4.1.0",
   "description": "Citron's definition of beauty",
   "repository": {
     "type": "git",
@@ -10,9 +10,6 @@
     "registry": "https://npm.pkg.github.com"
   },
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "eslint",
     "prettier",
