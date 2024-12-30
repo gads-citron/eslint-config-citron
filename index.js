@@ -130,6 +130,10 @@ module.exports = {
           match: false,
         },
       },
+      {
+        selector: 'enumMember',
+        format: ['UPPER_CASE'],
+      },
     ],
   },
   overrides: [
@@ -147,7 +151,7 @@ module.exports = {
         '@typescript-eslint/no-unsafe-member-access': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         'no-use-before-define': 'off',
-        '@typescript-eslint/no-floating-promises': 'on',
+        '@typescript-eslint/no-floating-promises': 'error',
         'max-lines': 'off',
         'no-empty': 'off',
         'no-throw-literal': 'off',
