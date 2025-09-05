@@ -1,6 +1,6 @@
 {
   "name": "@gads-citron/eslint-config-citron",
-  "version": "4.1.1",
+  "version": "4.2.0",
   "description": "Citron's definition of beauty",
   "repository": {
     "type": "git",
@@ -10,6 +10,10 @@
     "registry": "https://npm.pkg.github.com"
   },
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./plugin": "./eslint-plugin-citron.js"
+  },
   "keywords": [
     "eslint",
     "prettier",
