@@ -1,3 +1,5 @@
+const citronPlugin = require('./eslint-plugin-citron');
+
 module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   env: {
