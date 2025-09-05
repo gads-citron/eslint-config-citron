@@ -126,6 +126,12 @@ module.exports = {
         format: ['camelCase', 'UPPER_CASE']
       },
       {
+        selector: 'parameterProperty',
+        modifiers: ['private', 'readonly'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require'
+      },
+      {
         selector: 'parameter',
         format: ['camelCase']
       },
