@@ -127,7 +127,7 @@ module.exports = {
       },
       {
         selector: 'parameterProperty',
-        modifiers: ['private', 'readonly'],
+        modifiers: ['private'],
         format: ['camelCase'],
         leadingUnderscore: 'require'
       },
@@ -142,12 +142,6 @@ module.exports = {
       {
         selector: 'method',
         format: ['camelCase']
-      },
-      {
-        selector: 'property',
-        modifiers: ['private'],
-        format: ['camelCase'],
-        leadingUnderscore: 'require'
       },
       {
         selector: 'classProperty',
@@ -190,9 +184,14 @@ module.exports = {
         format: ['camelCase'],
         leadingUnderscore: 'forbid',
         filter: {
-          regex: '^_id$',
+          regex: '^_id$|^[0-9]+$', // Allow numeric keys and _id
           match: false,
         },
+      },
+      // Add specific rule for object properties to allow more flexibility
+      {
+        selector: 'objectLiteralProperty',
+        format: null, // Disable format checking for object literal properties
       },
     ],
 
