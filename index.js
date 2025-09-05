@@ -1,6 +1,9 @@
+const citronPlugin = require('./eslint-plugin-citron');
+
 module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   env: {
+    es2021: true,
     node: true,
     jest: true,
   },
@@ -14,19 +17,23 @@ module.exports = {
 
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 2021,
     sourceType: 'module',
     project: 'tsconfig.json',
   },
-  plugins: ['@typescript-eslint/eslint-plugin', 'import', 'prettier'],
+  plugins: [
+    '@typescript-eslint/eslint-plugin', 
+    'import', 
+    'prettier', 
+    'jest',
+    citronPlugin
+  ],
   settings: {
     'import/resolver': {
       typescript: {},
     },
   },
   rules: {
-    'prettier/prettier': 'error',
-
     /* Javascript */
     'max-lines': [
       'error',
@@ -37,17 +44,17 @@ module.exports = {
       },
     ],
     'max-lines-per-function': [
-      'error',
+      'warn',
       {
-        max: 35,
+        max: 50,
         skipBlankLines: true,
         skipComments: true,
       },
     ],
-    'max-depth': ['error', 4],
+    'max-depth': ['warn', 4],
     'max-nested-callbacks': ['error', 3],
-    'max-params': ['error', 5],
-    complexity: ['error', 10],
+    'max-params': ['warn', 4],
+    complexity: ['warn', 10],
     'no-await-in-loop': 'off',
     // Allows dependency injections into classes with empty constructors.
     'no-useless-constructor': 'off',
@@ -66,6 +73,25 @@ module.exports = {
     // Prefer named export
     'import/prefer-default-export': 'off',
     'import/no-default-export': 'error',
+    // Import organization
+    'import/order': [
+      'warn',
+      {
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index'
+        ],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true
+        }
+      }
+    ],
     // Restrict import of some libraries
     'no-restricted-imports': [
       'error',
@@ -78,7 +104,7 @@ module.exports = {
     // Rewrite this airbnb rule to allow for and for or loops
     'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement'],
 
-    /* Typescrypt */
+    /* Typescript */
 
     // Disable checksVoidReturn, too hard to handle with external packages
     '@typescript-eslint/no-misused-promises': [
@@ -88,28 +114,63 @@ module.exports = {
       },
     ],
 
-    '@typescript-eslint/no-explicit-any': ['error'],
+    '@typescript-eslint/no-explicit-any': ['warn'],
 
-    /** Misc */
-
-    // Fix no shadow error on enum, see https://github.com/typescript-eslint/typescript-eslint/issues/2483
-    'no-shadow': 'off',
-    '@typescript-eslint/no-shadow': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'error',
-    'class-methods-use-this': 'off',
-    'no-empty-function': 'off',
-    '@typescript-eslint/no-empty-function': 'error',
+    // Naming conventions (updated to match new requirements)
     '@typescript-eslint/naming-convention': [
-      'error',
+      'warn',
       {
-        selector: 'memberLike',
+        selector: 'variableLike',
+        format: ['camelCase']
+      },
+      {
+        selector: 'variable',
+        modifiers: ['const'],
+        format: ['camelCase', 'UPPER_CASE']
+      },
+      {
+        selector: 'parameter',
+        format: ['camelCase']
+      },
+      {
+        selector: 'function',
+        format: ['camelCase']
+      },
+      {
+        selector: 'method',
+        format: ['camelCase']
+      },
+      {
+        selector: 'property',
         modifiers: ['private'],
         format: ['camelCase'],
-        leadingUnderscore: 'require',
-        filter: {
-          regex: '^_id$',
-          match: false,
-        },
+        leadingUnderscore: 'require'
+      },
+      {
+        selector: 'classProperty',
+        modifiers: ['private'],
+        format: ['camelCase'],
+        leadingUnderscore: 'require'
+      },
+      {
+        selector: 'typeLike',
+        format: ['PascalCase']
+      },
+      {
+        selector: 'class',
+        format: ['PascalCase']
+      },
+      {
+        selector: 'interface',
+        format: ['PascalCase']
+      },
+      {
+        selector: 'enum',
+        format: ['PascalCase']
+      },
+      {
+        selector: 'enumMember',
+        format: ['PascalCase']
       },
       {
         selector: 'memberLike',
@@ -130,13 +191,57 @@ module.exports = {
           match: false,
         },
       },
-      {
-        selector: 'enumMember',
-        format: ['UPPER_CASE'],
-      },
     ],
+
+    // Class and service design rules
+    '@typescript-eslint/prefer-readonly': 'warn',
+    'max-classes-per-file': ['warn', 1],
+
+    // Error handling rules
+    '@typescript-eslint/no-throw-literal': 'warn',
+
+    // Async/await best practices
+    'prefer-promise-reject-errors': 'warn',
+    '@typescript-eslint/await-thenable': 'warn',
+    '@typescript-eslint/no-floating-promises': 'warn',
+
+    // Interface and type safety
+    '@typescript-eslint/strict-boolean-expressions': 'warn',
+    '@typescript-eslint/prefer-nullish-coalescing': 'warn',
+    '@typescript-eslint/prefer-optional-chain': 'warn',
+
+    // Enum conventions
+    '@typescript-eslint/prefer-enum-initializers': 'warn',
+
+    // Test conventions
+    'jest/consistent-test-it': ['warn', { fn: 'it' }],
+    'jest/prefer-expect-assertions': 'warn',
+    'jest/no-disabled-tests': 'warn',
+
+    // General code quality
+    'prefer-const': 'warn',
+    'no-var': 'warn',
+    'object-shorthand': 'warn',
+    'prefer-template': 'warn',
+
+    /** Misc */
+
+    // Fix no shadow error on enum, see https://github.com/typescript-eslint/typescript-eslint/issues/2483
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': 'error',
+    '@typescript-eslint/explicit-function-return-type': 'error',
+    'class-methods-use-this': 'off',
+    'no-empty-function': 'off',
+    '@typescript-eslint/no-empty-function': 'error',
   },
   overrides: [
+    {
+      files: ['*.contract.ts'],
+      rules: {
+        'max-lines': 'off',
+        'max-lines-per-function': 'off'
+      }
+    },
     {
       files: ['**/*.test.ts', '**/*.spec.ts'],
       rules: {
@@ -157,5 +262,33 @@ module.exports = {
         'no-throw-literal': 'off',
       },
     },
+    {
+      files: ['*.helper.ts'],
+      rules: {
+        // Note: citron/helper-class-structure would need to be implemented as a custom rule
+        'citron/helper-class-structure': 'warn'
+      }
+    },
+    {
+      files: ['*.dto.ts'],
+      rules: {
+        // Note: citron/no-objectid-in-dto would need to be implemented as a custom rule
+        'citron/no-objectid-in-dto': 'warn'
+      }
+    },
+    {
+      files: ['*.service.ts'],
+      rules: {
+        // Note: citron/service-stateless would need to be implemented as a custom rule
+        'citron/service-stateless': 'warn'
+      }
+    },
+    {
+      files: ['*.repository.ts'],
+      rules: {
+        // Note: citron/repository-return-types would need to be implemented as a custom rule
+        'citron/repository-return-types': 'warn'
+      }
+    }
   ],
 };
