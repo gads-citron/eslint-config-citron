@@ -1,5 +1,3 @@
-const citronPlugin = require('./eslint-plugin-citron');
-
 module.exports = {
   ignorePatterns: ['.eslintrc.js'],
   env: {
@@ -25,8 +23,7 @@ module.exports = {
     '@typescript-eslint/eslint-plugin', 
     'import', 
     'prettier', 
-    'jest',
-    citronPlugin
+    'jest'
   ],
   settings: {
     'import/resolver': {
@@ -233,6 +230,13 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'error',
+
+    // Citron custom rules
+    // 'citron/file-naming': 'warn',
+    // 'citron/helper-class-structure': 'warn',
+    // 'citron/no-objectid-in-dto': 'warn',
+    // 'citron/repository-return-types': 'warn',
+    // 'citron/service-stateless': 'warn',
   },
   overrides: [
     {
@@ -261,34 +265,30 @@ module.exports = {
         'no-empty': 'off',
         'no-throw-literal': 'off',
       },
-    },
-    {
-      files: ['*.helper.ts'],
-      rules: {
-        // Note: citron/helper-class-structure would need to be implemented as a custom rule
-        'citron/helper-class-structure': 'warn'
-      }
-    },
-    {
-      files: ['*.dto.ts'],
-      rules: {
-        // Note: citron/no-objectid-in-dto would need to be implemented as a custom rule
-        'citron/no-objectid-in-dto': 'warn'
-      }
-    },
-    {
-      files: ['*.service.ts'],
-      rules: {
-        // Note: citron/service-stateless would need to be implemented as a custom rule
-        'citron/service-stateless': 'warn'
-      }
-    },
-    {
-      files: ['*.repository.ts'],
-      rules: {
-        // Note: citron/repository-return-types would need to be implemented as a custom rule
-        'citron/repository-return-types': 'warn'
-      }
     }
+    // {
+    //   files: ['*.helper.ts'],
+    //   rules: {
+    //     'citron/helper-class-structure': 'warn'
+    //   }
+    // },
+    // {
+    //   files: ['*.dto.ts'],
+    //   rules: {
+    //     'citron/no-objectid-in-dto': 'warn'
+    //   }
+    // },
+    // {
+    //   files: ['*.service.ts'],
+    //   rules: {
+    //     'citron/service-stateless': 'warn'
+    //   }
+    // },
+    // {
+    //   files: ['*.repository.ts'],
+    //   rules: {
+    //     'citron/repository-return-types': 'warn'
+    //   }
+    // }
   ],
 };
